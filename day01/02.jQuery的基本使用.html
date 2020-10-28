@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的基本使用</title>
+    <script>
+        window.onload = function () {
+        //使用原生dom
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function () {
+                var username = document.getElementById("username").value;
+                alert(username);
+            }
+        }
+
+        //使用jQuery
+
+    </script>
+</head>
+<body>
+<!--
+需求：点击确定按钮，提示输入的值
+-->
+用户名： <input type="text" id="username">
+<button id="btn1">确定（原生版）</button>
+<button id="btn2">确定（jQuery版）</button>
+</body>
+</html>
