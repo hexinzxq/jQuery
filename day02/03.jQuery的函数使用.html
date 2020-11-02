@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery的函数使用</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
 </head>
 <body>
-
+<!--
+1.作为一般函数调用：$(param)
+    1).参数为函数：当DOM加载完成后，执行此回调函数
+    2）.参数为选择器字符串：查找所有匹配的字符串，并将它们封装为jQuery对象
+    3）.参数为DOM对象：将dom对象封装为jQuery对象
+    4）.参数为html标签字符串（用得少）：创建标签对象并封装成jQuery对象
+2.作为对象使用:$.xxx()
+    1).$each(index,iem):隐式遍历数组
+    2）.$trim():去除两端的空格
+-->
+<script>
+/*  需求1：点击按钮，显示按钮的文本，显示一个新的输入框
+    需求2：遍历输出数组中所有元素值
+    需求3：去掉" hexin "两端的空格*/
+    $(function () {//绑定文档加载完成的监听
+        var arr = ["与你相遇，是此生最美的风景","你为天涯，我为海角","你为明月，我为清泉","只愿细水长流是你，柴米油盐是你",
+            "我只愿能与你相守千千万万个轮回","未来的无限生涯，因你而幸福无边","弱水三千，只有你知我冷暖","天地广阔也不如囿于你","愿有岁月可回首，且以深情共白头",
+            "一寸相思一寸灰，思你念你情深深","喜欢你之后，眼角眉梢都是你"];
+        var word = Math.round(Math.random()*10);
+        $("#btn").click(function () {
+          $(this).html('这是🐖才点');
+            ($('<input type="text" placeholder="这是随机一句话" value="arr[word]">')).appendTo($('body'));
+        })
+    })
+</script>
+<button id="btn"> 宝贝点我</button>
+<input type="password" placeholder="随便输">
+<input type="password" placeholder="想输啥就输啥">
 </body>
 </html>

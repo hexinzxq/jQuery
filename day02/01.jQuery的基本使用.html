@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery的基本使用</title>
+    <script>
+        window.onload = function () {
+            //使用原生dom
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function () {
+                var username = document.getElementById("username").value;
+                alert(username);
+            }
+        }
+    </script>
+<!--   使用jQuery实现  -->
+<!--
+引入jQuery
+本地引入（上）
+远程引入（下）-----该方法测试时要求必须有网络
+-->
+<!--    <script type="text/javascript" src = "js/jquery-1.12.3.js"></script>-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        //绑定文档加载完成的监听
+        //使用jQuery核心函数（$/jQuery）
+        $(function () {
+            $('#btn2').click(function () {//给btn2绑定点击监听
+                var username = $('#username').val();
+                alert(username);
+            })
+        })
+
+        /*
+        * 1.使用jQuery核心函数：$/jQuery
+        * 2.使用jQuery核心对象：执行$（）返回的对象。例如
+        *  $(function () {
+        * var $btn2 = $('btn2');
+           $btn2.click(function () {//给btn2绑定点击监听
+                var username = $('#username').val();
+                alert(username);
+            })
+        })
+        * */
+    </script>
 </head>
 <body>
-
+<!--
+需求：点击确定按钮，提示输入的值
+-->
+用户名： <input type="text" id="username">
+<button id="btn1">确定（原生版）</button>
+<button id="btn2">确定（jQuery版）</button>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常见效果-回到顶部</title>
+    <style>
+        #to_top {
+            width: 30px;
+            height: 40px;
+            font: 14px/20px arial;
+            text-align: center;
+            background: aquamarine;
+            position: fixed;
+            cursor: pointer;
+            color: darkred;
+            left: 1050px;
+            top: 500px;
+        }
+    </style>
+</head>
+<body style="height: 2000px;">
+<div id="to_top">返回顶部</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script>
+    $('#to_top').click(function () {
+        //瞬间回到顶部
+        //$('html,body').scrollTop(0);
+
+        //平滑滚到顶部
+            //总距离
+        var $page = $('html,body');
+        var distance = $page.scrollTop();
+            //总时间
+        var time =1000;
+            //间隔时间
+        var intervalTime = 5;
+        var itemDistance = distance/(time/intervalTime);
+            //使用循环定时器不断滚动
+        var intervalId = setInterval(function () {
+            distance -= itemDistance;
+            //到达顶部，停止定时器
+            if(distance<=0){
+                distance = 0;
+                clearInterval(intervalId);
+            }
+            $page.scrollTop(distance);
+        },intervalTime)
+
+
+    })
+</script>
+</body>
+</html>
