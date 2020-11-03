@@ -2,9 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>第二阶段jQuery复习</title>
 </head>
 <body>
-
+<!--
+1；CSS模块
+    *style样式
+        *css(styleName):根据样式名得到对应的值
+        *css(styleName，value)：设置一个样式
+        *css({styleName，value})：设置多个样式
+    *位置坐标
+        *offset：读/写当前元素坐标（原点是页面左上角）
+        *position：读当前元素坐标（原点是父元素左上角）
+        *scrollTop（）/scrollLeft（）：读/写元素/页面的滚动条坐标
+    *尺寸
+        *width（）/height（）：width/height
+        *innerWidth（）/innerHeight（）：width+padding
+        *outWidth（）/outHeight（）：width+padding+border
+2：筛选模块
+    *过滤
+        *在jQuery内部元素中找出部分匹配的元素，并封装成新的jQuery对象返回
+        *first()
+        *last()
+        *eq(index)
+        *filter(selecter)：对当前元素提要求
+        *not(selecter)：对当前元素提要求并取反
+        *has(selecter):对子孙元素提要求
+    *查找
+        *查找jQuery对象内部的子孙/兄弟/父母，并封装成新的jQuery对象返回
+        *children(selecter)
+        *find(selector):找后代元素
+        *preAll(selector):前面的所有兄弟
+        *siblings(selector):所有兄弟
+        *parent():父元素
+3：文档处理模块
+    *增加
+        *append()/appendTo():插入后部
+        *preppend()/preppendTo():插入前部
+        *before():插到前面
+        *after():插到后面
+    *删除
+        *remove():将自己以及内部的孩子删除
+        *empty():掏空（自己还在）
+    *更新
+        *replaceWith()
+4：事件处理模块
+    *绑定事件
+        *eventName(function(){})
+        *on('eventName',function(){})
+        *常用：click,mouseenter/mouseleave,mouseover/mouseout,focus/blur
+        *hover(function(){},function(){}):分贝是mouseenter/mouseleave
+    *解绑事件
+        *off('eventName')
+    *事件委托
+        *将子元素的事件委托给父辈元素处理
+            *事件监听绑定在父元素上，但是事件发生在子元素上
+            *事件会冒泡到父元素
+            *最终调用事件回调函数的是子元素：event.target（得到的是发生事件的子元素）
+        *好处
+            *新增的元素没有监听
+            *减少监听过的数量（从n个变成1个）
+        *编码
+            *delegate(selector,eventName,function(){})//回调函数中的this是发生事件的子元素
+            *undelegate('eventName')
+    *事件坐标
+        *event.offsetX:原点是当前元素左上角
+        *event.clientX：原点是窗口左上角
+        *event.pageX：原点是页面左上角
+    *事件相关
+        *停止事件冒泡：evnet.stopPropagation()
+        *阻止事件默认行为:event.preventDefault()
+-->
 </body>
 </html>

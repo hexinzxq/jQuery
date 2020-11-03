@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery多库共存</title>
+    <style>
+    * {
+    margin: 0px;
+    }
+
+    .div1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 10px;
+    background: red;
+    }
+    </style>
+</head>
+<body>
+<!--
+问题 : 如果有2个库都有$, 就存在冲突
+解决 : jQuery库可以释放$的使用权, 让另一个库可以正常使用, 此时jQuery库只能使用jQuery了
+API : jQuery.noConflict()
+-->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    //释放$使用权
+    jQuery.noConflict()
+
+    //此时要想使用jQuery的功能，只能使用jQuery
+</script>
+</body>
+</html>

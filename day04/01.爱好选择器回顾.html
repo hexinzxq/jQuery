@@ -52,7 +52,7 @@
         $items.each(function () {
             this.checked = !this.checked
         })
-        $checkedAllBox.prop('checked', $items.filter(':not(:checked)').length===0)
+        $checkedAllBox.prop('checked', $items.filter(':not(:checked)').length===0)//此处是保证全选/全不选框状态合理
     })
 
     //4. 点击'提交': 提示所有勾选的爱好
