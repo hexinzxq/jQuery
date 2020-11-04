@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/laydate.js"></script>
+</head>
+<body>
+<input placeholder="请输入日期" class="laydate-icon" onclick="laydate()">
+<input class="laydate-icon" id="demo" value="2014-6-25更新">
+<script>
+    ;!function(){
+
+laydate.skin('molv');
+
+        laydate({
+            elem: '#demo'
+        })
+
+    }();
+</script>
+</body>
+</html>
